@@ -113,7 +113,7 @@ a {
   cursor: pointer;
 }
 
-.bsale-search label {
+.bsale-search button {
   position: absolute;
   background: #333;
   padding: 11px 10px;
@@ -121,7 +121,7 @@ a {
   border-bottom-left-radius: 10px;
 }
 
-.bsale-search label .fa-search {
+.bsale-search button .fa-search {
   color: #fff;
   font-size: 22px;
 }

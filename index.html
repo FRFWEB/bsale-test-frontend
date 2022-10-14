@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en" prefix="og: https://ogp.me/ns#">
   <head>
-    <title>Site</title>
+    <title>Bsale Test</title>
     <link
       rel="icon"
       type="image/ico"
@@ -68,19 +68,20 @@
           </div>
         </div>
         <div class="col-3">
-          <h1>Bsale Test</h1>
+          <a href="/"><h1 class="text-dark">Bsale Test</h1></a>
         </div>
         <div class="col-4">
-          <form name="" method="get">
+          <form name="bsale_search" method="get">
             <div class="bsale-search">
-              <label for="formFileMultiple" class="form-label"
-                ><i class="fa fa-search" aria-hidden="true"></i
-              ></label>
+              <button type="submit" class="form-label">
+                <i class="fa fa-search" aria-hidden="true"></i>
+              </button>
               <input
                 class="form-control form-control-lg"
                 type="text"
-                id="formFileMultiple"
                 placeholder="Busca tu producto aqui"
+                name="bsale_product_name"
+                pattern="[A-Za-z0-9 ]{1,}"
               />
             </div>
           </form>
