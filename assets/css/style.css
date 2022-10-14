@@ -1,0 +1,137 @@
+a {
+  text-decoration: none;
+}
+
+.card-discount {
+  position: absolute;
+  right: 0;
+  background: #f8eb63;
+  border-top-left-radius: 20px;
+  border-bottom-left-radius: 20px;
+}
+.card-discount > * {
+  padding: 10px;
+  margin-top: auto;
+  margin-bottom: auto;
+  font-weight: bold;
+}
+.card {
+  height: 465px;
+}
+.card img {
+  height: 300px;
+  width: 100%;
+}
+.fa-cart-plus,
+.fa-gratipay {
+  font-size: 26px;
+}
+
+.fa-bars {
+  font-size: 32px;
+}
+
+.loading {
+  display: flex;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  background: #333;
+  width: 100%;
+  opacity: 1;
+  transition: all ease-in-out 2s;
+  z-index: 2;
+  left: 0;
+}
+
+.loading > * {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  animation: anitionLoading infinite ease-in 4s;
+}
+
+@keyframes anitionLoading {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(2);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.bsale-menu nav {
+  position: fixed;
+  z-index: 1;
+  height: 100%;
+  background: #333;
+  width: 15%;
+  left: -300px;
+  transition: all 2s ease-in-out;
+  top: 70px;
+}
+
+.bsale-toogle:checked ~ nav {
+  left: 0;
+  top: 70px;
+}
+
+.bsale-menu nav ul {
+  list-style: none;
+  padding: 0 0 0 10px;
+}
+
+.bsale-menu nav ul li a {
+  color: #fff;
+  padding: 10px 0px;
+  display: block;
+}
+
+.bsale-menu nav ul li a:hover {
+  background: #fff;
+  color: #333;
+  border-top: 1px solid #333;
+}
+
+.bsale-menu i {
+  position: absolute;
+  top: 21px;
+  left: 40px;
+}
+
+.bsale-menu input {
+  position: absolute;
+  left: 36px;
+  width: 35px;
+  height: 35px;
+  top: 17px;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.bsale-search label {
+  position: absolute;
+  background: #333;
+  padding: 11px 10px;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+}
+
+.bsale-search label .fa-search {
+  color: #fff;
+  font-size: 22px;
+}
+.bsale-search input {
+  padding: 0 0px 0 50px;
+}
+
+.bsale-menu-flixed {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 2;
+}
