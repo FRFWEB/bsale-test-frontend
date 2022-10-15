@@ -1,3 +1,8 @@
+:root {
+  --color_1: #fff;
+  --color_2: #f8eb63;
+  --color_3: #333;
+}
 a {
   text-decoration: none;
 }
@@ -5,7 +10,7 @@ a {
 .card-discount {
   position: absolute;
   right: 0;
-  background: #f8eb63;
+  background: var(--color_2);
   border-top-left-radius: 20px;
   border-bottom-left-radius: 20px;
 }
@@ -36,7 +41,7 @@ a {
   height: 100vh;
   position: fixed;
   top: 0;
-  background: #333;
+  background: var(--color_3);
   width: 100%;
   opacity: 1;
   transition: all ease-in-out 2s;
@@ -63,43 +68,45 @@ a {
     transform: scale(1);
   }
 }
-
+.bsale-menu {
+  position: relative;
+}
 .bsale-menu nav {
   position: fixed;
   z-index: 1;
   height: 100%;
-  background: #333;
-  width: 15%;
-  left: -300px;
-  transition: all 2s ease-in-out;
+  background: var(--color_3);
+  width: 200px;
+  left: 0px;
+  transition: all 1s ease-in-out;
   top: 70px;
 }
 
 .bsale-toogle:checked ~ nav {
-  left: 0;
+  left: -300px;
   top: 70px;
 }
 
 .bsale-menu nav ul {
   list-style: none;
-  padding: 0 0 0 10px;
+  padding: 0;
 }
 
 .bsale-menu nav ul li a {
-  color: #fff;
+  color: var(--color_1);
   padding: 10px 0px;
   display: block;
 }
 
 .bsale-menu nav ul li a:hover {
-  background: #fff;
-  color: #333;
-  border-top: 1px solid #333;
+  background: var(--color_1);
+  color: var(--color_3);
+  border-top: 1px solid var(--color_3);
 }
 
 .bsale-menu i {
   position: absolute;
-  top: 21px;
+  top: 10px;
   left: 40px;
 }
 
@@ -108,21 +115,21 @@ a {
   left: 36px;
   width: 35px;
   height: 35px;
-  top: 17px;
+  top: 10px;
   opacity: 0;
   cursor: pointer;
 }
 
 .bsale-search button {
   position: absolute;
-  background: #333;
+  background: var(--color_3);
   padding: 11px 10px;
   border-top-left-radius: 10px;
   border-bottom-left-radius: 10px;
 }
 
 .bsale-search button .fa-search {
-  color: #fff;
+  color: var(--color_1);
   font-size: 22px;
 }
 .bsale-search input {
@@ -134,4 +141,146 @@ a {
   width: 100%;
   top: 0;
   z-index: 2;
+}
+
+.bsale-wishlist,
+.bsale-cart {
+  padding: 5px 7px;
+  border: 1px solid var(--color_1);
+  border-radius: 10px;
+  background: var(--color_3);
+  cursor: pointer;
+}
+.bsale-wishlist i,
+.bsale-cart i {
+  font-size: 35px;
+  color: var(--color_1);
+}
+
+.bsale-cart {
+  margin: 0 20px;
+  position: relative;
+}
+
+.bsale-cart .bsale-cart-items {
+  position: absolute;
+  background: var(--color_3);
+  width: 200px;
+  right: 0;
+  top: 60px;
+  height: 250px;
+  overflow-y: scroll;
+  z-index: 10;
+}
+
+.bsale-cart .bsale-cart-items .bsale-cart-item {
+  color: var(--color_1);
+  padding: 10px;
+  border-bottom: 3px solid var(--color_1);
+  justify-content: space-between;
+}
+
+.bsale-cart-panel::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 0;
+  transform: rotate(180deg);
+  left: 10px;
+  bottom: -15px;
+  border-top: 15px solid var(--color_2);
+  border-bottom: 15px solid transparent;
+  border-left: 15px solid transparent;
+  display: block;
+  border-right: 15px solid transparent;
+  z-index: 10;
+}
+
+body::-webkit-scrollbar,
+pre::-webkit-scrollbar,
+.bsale-cart .bsale-cart-items::-webkit-scrollbar {
+  width: 5px;
+  background: #ffffff;
+  height: 5px;
+}
+
+@media only screen and (max-width: 480px) and (min-width: 300px) {
+  header {
+    height: 70px;
+  }
+  header > .row {
+    height: 100%;
+    align-items: center;
+  }
+  header div div:nth-child(3) {
+    position: absolute;
+    top: 60px;
+    left: 0;
+    padding: 0;
+    z-index: 1;
+  }
+  header div div:nth-child(4) {
+    position: absolute;
+    right: 0;
+    top: 5px;
+    z-index: 1;
+  }
+  .bsale-menu i,
+  .bsale-menu input {
+    top: -15px;
+    z-index: 2;
+  }
+  .bsale-cart .bsale-cart-items {
+    left: inherit;
+    right: 0;
+  }
+}
+@media only screen and (max-width: 660px) and (min-width: 481px) {
+}
+@media only screen and (max-width: 840px) and (min-width: 661px) {
+  header div div:nth-child(2) {
+    text-align: center;
+  }
+  .bsale-menu i {
+    left: 20px;
+  }
+  .bsale-menu input {
+    left: 16px;
+  }
+  .card img {
+    width: 250px;
+  }
+  .bsale-menu nav {
+    top: 67px;
+  }
+}
+@media only screen and (max-width: 992px) and (min-width: 841px) {
+}
+@media only screen and (max-width: 1024px) and (min-width: 992px) {
+  .card img {
+    height: 240px;
+  }
+  .bsale-title {
+    font-size: 32px;
+  }
+  .bsale-menu nav {
+    top: 67px;
+  }
+}
+@media only screen and (max-width: 1200px) and (min-width: 1025px) {
+}
+@media only screen and (max-width: 1279px) and (min-width: 1201px) {
+}
+@media only screen and (max-width: 1919px) and (min-width: 1280px) {
+  .card img {
+    height: 270px;
+  }
+}
+@media only screen and (min-width: 1920px) {
+  .card img {
+    height: 250px;
+  }
+  .bsale-toogle:checked ~ nav {
+    left: -700px;
+  }
 }
