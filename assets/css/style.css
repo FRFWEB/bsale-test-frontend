@@ -285,6 +285,9 @@ header .row {
 }
 
 @media only screen and (max-width: 480px) and (min-width: 300px) {
+  main #bsale_test_products {
+    margin-top: 25px;
+  }
   header {
     height: 70px;
   }
