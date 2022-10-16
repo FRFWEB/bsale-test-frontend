@@ -111,6 +111,7 @@ function cartPanel(cartId, cartShowListId, localStorageName) {
             </div>
           </div>
           `;
+        getCartButton.classList.remove("bsale-cart-disabled");
       }
     } else {
       getPanelCart.innerHTML = "";
